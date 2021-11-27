@@ -4,7 +4,7 @@ function App() {
 	const [calc, setCalc] = useState("");
 	const [result, setResult] = useState("");
 
-	const ops = ['+','-','*','/'];
+	const ops = ['+','-','*','/','C'];
 
 	const updateCalc = vaLue => {
 		if (
@@ -52,6 +52,11 @@ function App() {
 		setCalc(value);
 	}
 
+	const clearAll = () => {
+		setCalc('0');
+		setResult('0');
+	}
+
 	return (
 		<div className="App">
 			<div className="calculator">
@@ -65,6 +70,7 @@ function App() {
 				<button onClick={() => updateCalc('-')}>-</button>
 				<button onClick={() => updateCalc('*')}>*</button>
 				<button onClick={() => updateCalc('/')}>/</button>
+				<button onClick={clearAll}>C</button>
 
 				<button onClick={deleteLast}>DEL</button>
 			</div>
